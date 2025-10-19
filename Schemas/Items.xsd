@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Items">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Item" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="UpgradePreviewSprite" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="scale" type="xs:decimal" />
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="origin" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Upgrade" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="gameversion" use="required" />
+                        <xs:attribute name="scale" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Sprite">
+                    <xs:complexType>
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="depth" type="xs:decimal" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="origin" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="InfectedSprite" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="origin" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DamagedInfectedSprite" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="origin" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="BrokenSprite" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="depth" type="xs:decimal" />
+                        <xs:attribute name="maxcondition" type="xs:integer" />
+                        <xs:attribute name="fadein" type="xs:boolean" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DecorativeSprite" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="0">
+                            <xs:element name="AnimationConditional" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="Voltage" />
+                                    <xs:attribute name="targetitemcomponent"
+                                        use="required" />
+                                    <xs:attribute name="CurrFlow" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="IsActiveConditional" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="Condition" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="texture" use="required" />
+                        <xs:attribute name="depth" type="xs:decimal" use="required" />
+                        <xs:attribute name="offset" use="required" />
+                        <xs:attribute name="sourcerect" use="required" />
+                        <xs:attribute name="origin" />
+                        <xs:attribute name="rotationspeed" type="xs:integer" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="LightComponent" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="range" type="xs:decimal" use="required" />
+                        <xs:attribute name="lightcolor" use="required" />
+                        <xs:attribute name="powerconsumption" type="xs:integer"
+                            use="required" />
+                        <xs:attribute name="IsOn" type="xs:boolean" use="required" />
+                        <xs:attribute name="castshadows" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="allowingameediting" type="xs:boolean"
+                            use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Pump" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="GuiFrame" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="relativesize" use="required" />
+                                    <xs:attribute name="minsize" use="required" />
+                                    <xs:attribute name="anchor" use="required" />
+                                    <xs:attribute name="style" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="sound" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="file" use="required" />
+                                    <xs:attribute name="type" use="required" />
+                                    <xs:attribute name="range" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="volumeproperty" use="required" />
+                                    <xs:attribute name="volume" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="loop" type="xs:boolean"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PumpInEmitter" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="particle" use="required" />
+                                    <xs:attribute name="particlespersecond"
+                                        type="xs:integer" />
+                                    <xs:attribute name="position" use="required" />
+                                    <xs:attribute name="anglemin" type="xs:integer" />
+                                    <xs:attribute name="anglemax" type="xs:integer" />
+                                    <xs:attribute name="velocitymin" type="xs:integer" />
+                                    <xs:attribute name="velocitymax" type="xs:integer" />
+                                    <xs:attribute name="scalemin" />
+                                    <xs:attribute name="scalemax" />
+                                    <xs:attribute name="AngleMin" type="xs:integer" />
+                                    <xs:attribute name="AngleMax" type="xs:integer" />
+                                    <xs:attribute name="VelocityMin" type="xs:integer" />
+                                    <xs:attribute name="VelocityMax" type="xs:integer" />
+                                    <xs:attribute name="ParticlesPerSecond"
+                                        type="xs:integer" />
+                                    <xs:attribute name="ColorMultiplier" />
+                                    <xs:attribute name="ScaleMultiplier" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PumpOutEmitter" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="particle" use="required" />
+                                    <xs:attribute name="particlespersecond"
+                                        type="xs:integer" use="required" />
+                                    <xs:attribute name="position" use="required" />
+                                    <xs:attribute name="anglemin" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="anglemax" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="velocitymin" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="velocitymax" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="scalemin" type="xs:decimal" />
+                                    <xs:attribute name="scalemax" type="xs:decimal" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="StatusEffect">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Conditional">
+                                            <xs:complexType>
+                                                <xs:attribute name="targetitemcomponent" />
+                                                <xs:attribute
+                                                    name="StressDeteriorationMultiplier" />
+                                                <xs:attribute name="condition" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ParticleEmitter"
+                                            maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="particle"
+                                                    use="required" />
+                                                <xs:attribute name="particlespersecond"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="scalemin"
+                                                    use="required" />
+                                                <xs:attribute name="scalemax"
+                                                    use="required" />
+                                                <xs:attribute name="anglemax"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="velocitymin"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="velocitymax"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="mincondition"
+                                                    type="xs:decimal" />
+                                                <xs:attribute name="maxcondition"
+                                                    type="xs:decimal" />
+                                                <xs:attribute name="distancemax"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="position" />
+                                                <xs:attribute name="AngleMin"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="AngleMax"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="VelocityMin"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="VelocityMax"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="ParticlesPerSecond"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="EmitInterval"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="ParticleAmount"
+                                                    type="xs:integer" />
+                                                <xs:attribute name="ColorMultiplier" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="type" use="required" />
+                                    <xs:attribute name="target" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="IsActiveConditional" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="condition" />
+                                    <xs:attribute name="targetitemcomponent" />
+                                    <xs:attribute name="IsHullFull" type="xs:boolean" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Sound" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="file" use="required" />
+                                    <xs:attribute name="type" use="required" />
+                                    <xs:attribute name="range" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="volumeproperty" use="required" />
+                                    <xs:attribute name="volume" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="loop" type="xs:boolean"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="canbeselected" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="maxflow" type="xs:integer" use="required" />
+                        <xs:attribute name="PowerConsumption" type="xs:decimal" />
+                        <xs:attribute name="MinVoltage" type="xs:decimal" />
+                        <xs:attribute name="IsOn" type="xs:boolean" />
+                        <xs:attribute name="msg" />
+                        <xs:attribute name="updatewhenbroken" type="xs:boolean" />
+                        <xs:attribute name="flowpercentage" type="xs:integer" />
+                        <xs:attribute name="cancauselethalpressure" type="xs:boolean" />
+                        <xs:attribute name="VulnerableToEMP" type="xs:boolean" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ConnectionPanel" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="GuiFrame">
+                                <xs:complexType>
+                                    <xs:attribute name="relativesize" use="required" />
+                                    <xs:attribute name="minsize" use="required" />
+                                    <xs:attribute name="maxsize" use="required" />
+                                    <xs:attribute name="anchor" use="required" />
+                                    <xs:attribute name="style" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RequiredSkill">
+                                <xs:complexType>
+                                    <xs:attribute name="identifier" use="required" />
+                                    <xs:attribute name="level" type="xs:integer"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="StatusEffect">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Sound">
+                                            <xs:complexType>
+                                                <xs:attribute name="file" use="required" />
+                                                <xs:attribute name="range"
+                                                    type="xs:integer" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Explosion">
+                                            <xs:complexType>
+                                                <xs:attribute name="range"
+                                                    type="xs:decimal" use="required" />
+                                                <xs:attribute name="force"
+                                                    type="xs:decimal" use="required" />
+                                                <xs:attribute name="flames"
+                                                    type="xs:boolean" use="required" />
+                                                <xs:attribute name="shockwave"
+                                                    type="xs:boolean" use="required" />
+                                                <xs:attribute name="sparks"
+                                                    type="xs:boolean" use="required" />
+                                                <xs:attribute name="underwaterbubble"
+                                                    type="xs:boolean" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Affliction"
+                                            maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="identifier"
+                                                    use="required" />
+                                                <xs:attribute name="strength"
+                                                    type="xs:integer" use="required" />
+                                                <xs:attribute name="probability"
+                                                    type="xs:decimal" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="ParticleEmitter">
+                                            <xs:complexType>
+                                                <xs:attribute name="particle"
+                                                    use="required" />
+                                                <xs:attribute name="DistanceMin"
+                                                    type="xs:integer" use="required" />
+                                                <xs:attribute name="DistanceMax"
+                                                    type="xs:integer" use="required" />
+                                                <xs:attribute name="ParticleAmount"
+                                                    type="xs:integer" use="required" />
+                                                <xs:attribute name="ScaleMin"
+                                                    type="xs:decimal" use="required" />
+                                                <xs:attribute name="ScaleMax"
+                                                    type="xs:decimal" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="type" use="required" />
+                                    <xs:attribute name="target" use="required" />
+                                    <xs:attribute name="targetlimbs" use="required" />
+                                    <xs:attribute name="AllowWhenBroken"
+                                        type="xs:boolean" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RequiredItem">
+                                <xs:complexType>
+                                    <xs:attribute name="items" use="required" />
+                                    <xs:attribute name="type" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="input" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="name" use="required" />
+                                    <xs:attribute name="displayname" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="output">
+                                <xs:complexType>
+                                    <xs:attribute name="name" use="required" />
+                                    <xs:attribute name="displayname" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="selectkey" use="required" />
+                        <xs:attribute name="canbeselected" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="msg" use="required" />
+                        <xs:attribute name="hudpriority" type="xs:integer"
+                            use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Repairable" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="GuiFrame">
+                                <xs:complexType>
+                                    <xs:attribute name="relativesize" use="required" />
+                                    <xs:attribute name="minsize" use="required" />
+                                    <xs:attribute name="maxsize" use="required" />
+                                    <xs:attribute name="anchor" use="required" />
+                                    <xs:attribute name="relativeoffset" use="required" />
+                                    <xs:attribute name="style" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RequiredSkill">
+                                <xs:complexType>
+                                    <xs:attribute name="identifier" use="required" />
+                                    <xs:attribute name="level" type="xs:integer"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="RequiredItem">
+                                <xs:complexType>
+                                    <xs:attribute name="items" use="required" />
+                                    <xs:attribute name="type" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ParticleEmitter" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="particle" use="required" />
+                                    <xs:attribute name="particlespersecond"
+                                        type="xs:integer" use="required"
+                                        fixed="2" />
+                                    <xs:attribute name="scalemin" use="required" />
+                                    <xs:attribute name="scalemax" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="anglemax" type="xs:integer" />
+                                    <xs:attribute name="velocitymin" type="xs:integer" />
+                                    <xs:attribute name="velocitymax" type="xs:integer" />
+                                    <xs:attribute name="mincondition" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="maxcondition" type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="distancemax" type="xs:integer" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="StatusEffect">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Sound">
+                                            <xs:complexType>
+                                                <xs:attribute name="file" use="required" />
+                                                <xs:attribute name="range"
+                                                    type="xs:integer" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Affliction"
+                                            maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="identifier"
+                                                    use="required" />
+                                                <xs:attribute name="strength"
+                                                    type="xs:integer" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="type" use="required" />
+                                    <xs:attribute name="target" use="required" />
+                                    <xs:attribute name="targetlimbs" use="required" />
+                                    <xs:attribute name="AllowWhenBroken"
+                                        type="xs:boolean" />
+                                    <xs:attribute name="allowwhenbroken"
+                                        type="xs:boolean" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="selectkey" use="required" />
+                        <xs:attribute name="header" use="required" />
+                        <xs:attribute name="deteriorationspeed" type="xs:decimal" />
+                        <xs:attribute name="mindeteriorationdelay" type="xs:integer" />
+                        <xs:attribute name="maxdeteriorationdelay" type="xs:integer" />
+                        <xs:attribute name="MinDeteriorationCondition" type="xs:integer" />
+                        <xs:attribute name="RepairThreshold" type="xs:integer" />
+                        <xs:attribute name="fixDurationHighSkill" type="xs:integer" />
+                        <xs:attribute name="fixDurationLowSkill" type="xs:integer" />
+                        <xs:attribute name="StressDeteriorationThreshold"
+                            type="xs:decimal" />
+                        <xs:attribute name="MaxStressDeteriorationMultiplier"
+                            type="xs:integer" />
+                        <xs:attribute name="StressDeteriorationIncreaseSpeed"
+                            type="xs:decimal" />
+                        <xs:attribute name="StressDeteriorationDecreaseSpeed"
+                            type="xs:decimal" />
+                        <xs:attribute name="msg" use="required" />
+                        <xs:attribute name="hudpriority" type="xs:integer"
+                            use="required" />
+                        <xs:attribute name="repairthreshold" type="xs:integer" />
+                        <xs:attribute name="fixdurationhighskill" type="xs:integer" />
+                        <xs:attribute name="fixdurationlowskill" type="xs:integer" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Body" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="bodytype" />
+                        <xs:attribute name="width" type="xs:integer" use="required" />
+                        <xs:attribute name="height" type="xs:integer" use="required" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="TriggerComponent" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="IsActiveConditional">
+                                <xs:complexType>
+                                    <xs:attribute name="targetitemcomponent"
+                                        use="required" />
+                                    <xs:attribute name="currflow" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Conditional">
+                                <xs:complexType>
+                                    <xs:attribute name="IsPlayer" type="xs:boolean"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Attack">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Affliction">
+                                            <xs:complexType>
+                                                <xs:attribute name="identifier"
+                                                    use="required" />
+                                                <xs:attribute name="strength"
+                                                    type="xs:integer" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="onlyhumans" type="xs:boolean"
+                                        use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="TriggerComponent">
+                                <xs:complexType>
+                                    <xs:attribute name="updatewhenbroken"
+                                        type="xs:boolean" use="required" />
+                                    <xs:attribute name="triggeredby" use="required" />
+                                    <xs:attribute name="radius" type="xs:integer"
+                                        use="required" />
+                                    <xs:attribute name="relativedirectionalforce"
+                                        type="xs:boolean"
+                                        use="required" />
+                                    <xs:attribute name="ForceFluctuation"
+                                        type="xs:boolean" use="required" />
+                                    <xs:attribute name="ForceFluctuationStrength"
+                                        type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="ForceFluctuationInterval"
+                                        type="xs:decimal"
+                                        use="required" />
+                                    <xs:attribute name="directionalforce" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="updatewhenbroken" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="triggeredby" use="required" />
+                        <xs:attribute name="relativedirectionalforce" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="verticalforce" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="directionalforce" use="required" />
+                        <xs:attribute name="distancebasedforce" type="xs:boolean"
+                            use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" />
+            <xs:attribute name="identifier" use="required" />
+            <xs:attribute name="tags" />
+            <xs:attribute name="linkable" type="xs:boolean" />
+            <xs:attribute name="category" />
+            <xs:attribute name="scale" type="xs:decimal" />
+            <xs:attribute name="damagedbyexplosions" type="xs:boolean" />
+            <xs:attribute name="explosiondamagemultiplier" type="xs:decimal" />
+            <xs:attribute name="allowrotatingineditor" type="xs:boolean" />
+            <xs:attribute name="GrabWhenSelected" type="xs:boolean" />
+            <xs:attribute name="nameidentifier" />
+            <xs:attribute name="allowedlinks" />
+            <xs:attribute name="receivesubmarineimpacts" type="xs:boolean" />
+            <xs:attribute name="impacttolerance" type="xs:decimal" />
+            <xs:attribute name="impactdamage" type="xs:integer" />
+            <xs:attribute name="impactdamageprobability" type="xs:decimal" />
+            <xs:attribute name="hideinmenus" type="xs:boolean" />
+            <xs:attribute name="variantof" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Afflictions">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Affliction" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Affliction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Effect" maxOccurs="unbounded" />
+                <xs:element ref="AfflictionOverlay" minOccurs="0" />
+                <xs:element ref="Icon" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute name="name" use="required" />
+            <xs:attribute name="identifier" use="required" />
+            <xs:attribute name="description" use="required" />
+            <xs:attribute name="type" use="required" />
+            <xs:attribute name="limbspecific" type="xs:boolean" use="required" />
+            <xs:attribute name="indicatorlimb" use="required" />
+            <xs:attribute name="showiconthreshold" type="xs:integer" use="required" />
+            <xs:attribute name="showicontoothersthreshold" type="xs:integer"
+                use="required" />
+            <xs:attribute name="showinhealthscannerthreshold" type="xs:integer"
+                use="required" />
+            <xs:attribute name="maxstrength" type="xs:integer" use="required" />
+            <xs:attribute name="afflictionoverlayalphaislinear" type="xs:boolean" />
+            <xs:attribute name="healableinmedicalclinic" type="xs:boolean" />
+            <xs:attribute name="MedicalSkillGain" type="xs:decimal" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Effect">
+        <xs:complexType>
+            <xs:sequence minOccurs="0">
+                <xs:element name="StatusEffect" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="target" use="required" />
+                        <xs:attribute name="lockhands" type="xs:boolean"
+                            use="required" />
+                        <xs:attribute name="setvalue" type="xs:boolean"
+                            use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="minstrength" type="xs:integer"
+                use="required" />
+            <xs:attribute name="maxstrength" type="xs:integer"
+                use="required" />
+            <xs:attribute name="minspeedmultiplier" type="xs:decimal" />
+            <xs:attribute name="maxspeedmultiplier" type="xs:decimal" />
+            <xs:attribute name="strengthchange" use="required" />
+            <xs:attribute name="minscreenblur" type="xs:decimal" />
+            <xs:attribute name="maxscreenblur" type="xs:decimal" />
+            <xs:attribute name="minradialdistort" type="xs:decimal" />
+            <xs:attribute name="maxradialdistort" type="xs:decimal" />
+            <xs:attribute name="minchromaticaberration" type="xs:decimal" />
+            <xs:attribute name="maxchromaticaberration" type="xs:decimal" />
+            <xs:attribute name="MinAfflictionOverlayAlphaMultiplier" />
+            <xs:attribute name="MaxAfflictionOverlayAlphaMultiplier" />
+            <xs:attribute name="tag" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AfflictionOverlay">
+        <xs:complexType>
+            <xs:attribute name="texture" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="Icon">
+        <xs:complexType>
+            <xs:attribute name="texture" use="required" />
+            <xs:attribute name="sourcerect" use="required" />
+            <xs:attribute name="origin" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

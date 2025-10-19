@@ -1,0 +1,32 @@
+{
+    "Lua.diagnostics.globals": [
+        "Hook",
+        "Timer",
+        "InvSlotType",
+        "Game",
+        "CLIENT",
+        "Character",
+        "Vector2",
+        "ItemPrefab",
+        "Entity",
+        "ChatMessageType",
+        "ChatMessage",
+        "Client",
+        "Color"
+    ],
+    "xml.fileAssociations": [
+        {
+            "pattern": "**/Items/**/*.xml",
+            "systemId": "Schemas/Items.xsd"
+        },
+        {
+            "pattern": "**/Afflictions/**/*.xml",
+            "systemId": "Schemas/Afflictions.xsd"
+        },
+        {
+            "pattern": "**/Afflictions.xml",
+            "systemId": "Schemas/Afflictions.xsd"
+        }
+    ],
+    "Codegeex.RepoIndex": true
+}
