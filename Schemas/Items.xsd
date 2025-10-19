@@ -532,22 +532,113 @@
             </xs:sequence>
             <xs:attribute name="name" />
             <xs:attribute name="identifier" use="required" />
+            <xs:attribute name="nameidentifier" />
+            <xs:attribute name="fallbacknameidentifier" />
+            <xs:attribute name="descriptionidentifier" />
+            <xs:attribute name="aliases" />
             <xs:attribute name="tags" />
             <xs:attribute name="linkable" type="xs:boolean" />
             <xs:attribute name="category" />
-            <xs:attribute name="scale" type="xs:decimal" />
-            <xs:attribute name="damagedbyexplosions" type="xs:boolean" />
-            <xs:attribute name="explosiondamagemultiplier" type="xs:decimal" />
-            <xs:attribute name="allowrotatingineditor" type="xs:boolean" />
-            <xs:attribute name="GrabWhenSelected" type="xs:boolean" />
-            <xs:attribute name="nameidentifier" />
-            <xs:attribute name="allowedlinks" />
-            <xs:attribute name="receivesubmarineimpacts" type="xs:boolean" />
-            <xs:attribute name="impacttolerance" type="xs:decimal" />
-            <xs:attribute name="impactdamage" type="xs:integer" />
-            <xs:attribute name="impactdamageprobability" type="xs:decimal" />
-            <xs:attribute name="hideinmenus" type="xs:boolean" />
             <xs:attribute name="variantof" />
+
+            <xs:attribute name="interactdistance" type="xs:float" />
+            <xs:attribute name="interactpriority" type="xs:float" />
+            <xs:attribute name="interactthroughwalls" type="xs:boolean" />
+            <xs:attribute name="hideconditionbar" type="xs:boolean" />
+            <xs:attribute name="hideconditionintooltip" type="xs:boolean" />
+            <xs:attribute name="requirebodyinsidetrigger" type="xs:boolean" />
+            <xs:attribute name="requirecursorinsidetrigger" type="xs:boolean" />
+            <xs:attribute name="requirecampaigninteract" type="xs:boolean" />
+            <xs:attribute name="focusonselected" type="xs:boolean" />
+            <xs:attribute name="offsetonselected" type="xs:float" />
+            <xs:attribute name="health" type="xs:float" />
+            <xs:attribute name="allowsellingwhenbroken" type="xs:boolean" />
+            <xs:attribute name="indestructible" type="xs:boolean" />
+            <xs:attribute name="damagedbyexplosions" type="xs:boolean" />
+            <xs:attribute name="explosiondamagemultiplier" type="xs:float" />
+            <xs:attribute name="damagedbyprojectiles" type="xs:boolean" />
+            <xs:attribute name="damagedbymeleeweapons" type="xs:boolean" />
+            <xs:attribute name="damagedbyrepairtools" type="xs:boolean" />
+            <xs:attribute name="damagedbymonsters" type="xs:boolean" />
+            <xs:attribute name="fireproof" type="xs:boolean" />
+            <xs:attribute name="waterproof" type="xs:boolean" />
+            <xs:attribute name="impacttolerance" type="xs:float" />
+            <xs:attribute name="ondamagedthreshold" type="xs:float" />
+            <xs:attribute name="sonarsize" type="xs:float" />
+            <xs:attribute name="useinhealthinterface" type="xs:boolean" />
+            <xs:attribute name="disableitemusagewhenselected" type="xs:boolean" />
+            <xs:attribute name="cargocontaineridentifier" type="xs:string" />
+            <xs:attribute name="usecontainedspritecolor" type="xs:boolean" />
+            <xs:attribute name="usecontainedinventoryiconcolor" type="xs:boolean" />
+            <xs:attribute name="addedrepairspeedmultiplier" type="xs:float" />
+            <xs:attribute name="addedpickingspeedmultiplier" type="xs:float" />
+            <xs:attribute name="cannotrepairfail" type="xs:boolean" />
+            <xs:attribute name="equipconfirmationtext" type="xs:string" />
+            <xs:attribute name="allowrotatingineditor" type="xs:boolean" />
+            <xs:attribute name="showcontentsintooltip" type="xs:boolean" />
+            <xs:attribute name="canflipx" type="xs:boolean" />
+            <xs:attribute name="canflipy" type="xs:boolean" />
+            <xs:attribute name="isdangerous" type="xs:boolean" />
+            <xs:attribute name="maxstacksize" type="xs:int" />
+            <xs:attribute name="allowdroppingonswap" type="xs:boolean" />
+            <xs:attribute name="resizehorizontal" type="xs:boolean" />
+            <xs:attribute name="resizevertical" type="xs:boolean" />
+            <xs:attribute name="description" type="xs:string" />
+            <xs:attribute name="allowedupgrades" type="xs:string" />
+            <xs:attribute name="hideinmenus" type="xs:boolean" />
+            <xs:attribute name="subcategory" type="xs:string" />
+            <xs:attribute name="spritecolor" />
+            <xs:attribute name="scale" type="xs:float" />
+
+            <xs:attribute name="InteractDistance" type="xs:float" />
+            <xs:attribute name="InteractPriority" type="xs:float" />
+            <xs:attribute name="InteractThroughWalls" type="xs:boolean" />
+            <xs:attribute name="HideConditionBar" type="xs:boolean" />
+            <xs:attribute name="HideConditionInTooltip" type="xs:boolean" />
+            <xs:attribute name="RequireBodyInsideTrigger" type="xs:boolean" />
+            <xs:attribute name="RequireCursorInsideTrigger" type="xs:boolean" />
+            <xs:attribute name="RequireCampaignInteract" type="xs:boolean" />
+            <xs:attribute name="FocusOnSelected" type="xs:boolean" />
+            <xs:attribute name="OffsetOnSelected" type="xs:float" />
+            <xs:attribute name="Health" type="xs:float" />
+            <xs:attribute name="AllowSellingWhenBroken" type="xs:boolean" />
+            <xs:attribute name="Indestructible" type="xs:boolean" />
+            <xs:attribute name="DamagedByExplosions" type="xs:boolean" />
+            <xs:attribute name="ExplosionDamageMultiplier" type="xs:float" />
+            <xs:attribute name="DamagedByProjectiles" type="xs:boolean" />
+            <xs:attribute name="DamagedByMeleeWeapons" type="xs:boolean" />
+            <xs:attribute name="DamagedByRepairTools" type="xs:boolean" />
+            <xs:attribute name="DamagedByMonsters" type="xs:boolean" />
+            <xs:attribute name="FireProof" type="xs:boolean" />
+            <xs:attribute name="WaterProof" type="xs:boolean" />
+            <xs:attribute name="ImpactTolerance" type="xs:float" />
+            <xs:attribute name="OnDamagedThreshold" type="xs:float" />
+            <xs:attribute name="SonarSize" type="xs:float" />
+            <xs:attribute name="UseInHealthInterface" type="xs:boolean" />
+            <xs:attribute name="DisableItemUsageWhenSelected" type="xs:boolean" />
+            <xs:attribute name="CargoContainerIdentifier" type="xs:string" />
+            <xs:attribute name="UseContainedSpriteColor" type="xs:boolean" />
+            <xs:attribute name="UseContainedInventoryIconColor" type="xs:boolean" />
+            <xs:attribute name="AddedRepairSpeedMultiplier" type="xs:float" />
+            <xs:attribute name="AddedPickingSpeedMultiplier" type="xs:float" />
+            <xs:attribute name="CannotRepairFail" type="xs:boolean" />
+            <xs:attribute name="EquipConfirmationText" type="xs:string" />
+            <xs:attribute name="AllowRotatingInEditor" type="xs:boolean" />
+            <xs:attribute name="ShowContentsInTooltip" type="xs:boolean" />
+            <xs:attribute name="CanFlipX" type="xs:boolean" />
+            <xs:attribute name="CanFlipY" type="xs:boolean" />
+            <xs:attribute name="IsDangerous" type="xs:boolean" />
+            <xs:attribute name="MaxStackSize" type="xs:int" />
+            <xs:attribute name="AllowDroppingOnSwap" type="xs:boolean" />
+            <xs:attribute name="ResizeHorizontal" type="xs:boolean" />
+            <xs:attribute name="ResizeVertical" type="xs:boolean" />
+            <xs:attribute name="Description" type="xs:string" />
+            <xs:attribute name="AllowedUpgrades" type="xs:string" />
+            <xs:attribute name="HideInMenus" type="xs:boolean" />
+            <xs:attribute name="Subcategory" type="xs:string" />
+            <xs:attribute name="Linkable" type="xs:boolean" />
+            <xs:attribute name="SpriteColor" />
+            <xs:attribute name="Scale" type="xs:float" />
         </xs:complexType>
     </xs:element>
 </xs:schema>

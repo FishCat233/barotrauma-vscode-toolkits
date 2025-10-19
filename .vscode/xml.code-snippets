@@ -24,7 +24,7 @@
 			"    damagedbyexplosions=\"false\"",
 			"    explosiondamagemultiplier=\"0\"",
 			"    allowrotatingineditor=\"false\"",
-			"    GrabWhenSelected=\"false\"",
+			"    grabwhenselected=\"false\"",
 			"    allowedlinks=\"false\"",
 			"    receivesubmarineimpacts=\"false\"",
 			"    impactdamage=\"0\"",

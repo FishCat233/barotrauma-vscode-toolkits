@@ -20,6 +20,12 @@ VSCode: 解压到内容包本地目录。
 
 安装成功后，如果是 RedHat 的 XML 插件，应该就能顺利进行提示了。
 
+目前的命名格式是
+
+> \<Label name="snakecase">\</Label>
+
+标签大驼峰，属性小驼峰。
+
 ## 时间线
 
 - 正在进行
@@ -29,6 +35,10 @@ VSCode: 解压到内容包本地目录。
   - characters
   - randomevents
   - docs support
+
+## 引用
+
+[Barotrauma Modding Guideline](https://regalis11.github.io/BaroModDoc/)
 
 ## 日志
 
