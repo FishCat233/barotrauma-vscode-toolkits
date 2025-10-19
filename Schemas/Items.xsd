@@ -25,7 +25,7 @@
                         <xs:attribute name="scale" use="required" />
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Sprite">
+                <xs:element name="Sprite" minOccurs="0">
                     <xs:complexType>
                         <xs:attribute name="texture" use="required" />
                         <xs:attribute name="depth" type="xs:decimal" />
@@ -47,7 +47,7 @@
                         <xs:attribute name="origin" use="required" />
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="BrokenSprite" maxOccurs="unbounded">
+                <xs:element name="BrokenSprite" minOccurs="0">
                     <xs:complexType>
                         <xs:attribute name="texture" use="required" />
                         <xs:attribute name="sourcerect" use="required" />

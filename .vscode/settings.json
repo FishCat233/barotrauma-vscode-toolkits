@@ -20,6 +20,10 @@
             "systemId": "Schemas/Items.xsd"
         },
         {
+            "pattern": "**/Items.xml",
+            "systemId": "Schemas/Items.xsd"
+        },
+        {
             "pattern": "**/Afflictions/**/*.xml",
             "systemId": "Schemas/Afflictions.xsd"
         },
