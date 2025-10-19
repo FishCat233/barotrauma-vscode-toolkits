@@ -23,12 +23,12 @@ VSCode: 解压到内容包本地目录。
 ## 时间线
 
 - 正在进行
-  - characters
-  - docs support
+  - vscode snippets
 
 - 计划中
+  - characters
   - randomevents
-  - vscode template
+  - docs support
 
 ## 日志
 
