@@ -27,6 +27,9 @@
             "pattern": "**/Afflictions.xml",
             "systemId": "Schemas/Afflictions.xsd"
         }
+        {
+            "pattern": "**/filelist.xml",
+            "systemId": "Schemas/filelist.xsd"
+        }
     ],
-    "Codegeex.RepoIndex": true
 }
